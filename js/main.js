@@ -1,6 +1,36 @@
+function QI(x, x_mid, x_up) {
+    return x.map((xi, i) => Math.min(100, 100*Math.abs(xi - x_mid[i]) / (x_up[i] - x_mid[i])));
+  }
+
+function result(x) {
+    if (x < 30) {
+      return 'Poor';
+    } else if (x < 50) {
+      return 'Marginal';
+    } else if (x < 80) {
+      return 'Fair';
+    } else {
+      return 'Good';
+    }
+  }
+
+  function choose_style(x) {
+    if (x < 30) {
+      return 'green';
+    } else if (x < 50) {
+      return 'yellow';
+    } else if (x < 80) {
+      return 'brown';
+    } else {
+      return 'red';
+    }
+  }
+
 document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
     event.preventDefault();
-
+    //Low Up parametrs
+    const p_up=[9,10,45,10,1500,350,500,10,0.7,1]
+    const p_mid=[7,0,0,0,0,0,0,0,0,0]
     // Get values of each parameter
     const ph = parseFloat(document.getElementById('ph').value) || 0;
     const oxidizing = parseFloat(document.getElementById('oxidizing').value) || 0;
@@ -14,21 +44,26 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     const cu = parseFloat(document.getElementById('cu').value) || 0;
 
     // Calculate the sum of all values
-    const total = ph + oxidizing + no3 + hardness + tss + cl + so4 + fe + f + cu;
+    const parametrs=[ph,oxidizing,no3,hardness,tss,cl,so4,fe,f,cu]
+    const si=QI(parametrs,p_mid,p_up)
+    const ss = si.map(value => Math.exp(value / 100));
+    const S = ss.reduce((acc, val) => acc + val, 0);
+    const w = ss.map(value => value / S);
+    const wqi = w.reduce((acc, wi,i)=>acc+wi*si[i],0);
+    const WQI = 100-Math.max(0,wqi);
 
     // Display the result in the result box
     const resultBox = document.getElementById('result-box');
-    resultBox.innerText = 'Total: ' + total.toFixed(0); //
+    resultBox.innerText =  WQI.toFixed(0)+'  '+result(WQI); //
 
-    // Change the result box color to green
-    resultBox.style.backgroundColor = 'green';
-    resultBox.style.color = 'white';
+    resultBox.classList.remove('green', 'yellow', 'brown', 'red');
+    const chosenStyle = choose_style(WQI);
+    resultBox.classList.add(chosenStyle);
 });
 
 document.querySelector('button[type="reset"]').addEventListener('click', function() {
     // Clear the result box and reset its color when the form is reset
     const resultBox = document.getElementById('result-box');
     resultBox.innerText = '';
-    resultBox.style.backgroundColor = 'white';
-    resultBox.style.color = 'black';
+    resultBox.classList.remove('green', 'yellow', 'brown', 'red');
 });
