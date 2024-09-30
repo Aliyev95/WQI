@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Water Quality Index Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Water Quality Index Calculator</h1>
+        <p>An index value is calculated for each of the following water quality parameters: pH, Oxidizing ability, NO₃⁻, Total Hardness, TSS, Cl⁻, SO₄²⁻, Fe⁺²/³, F⁻, Cu⁺². A higher value of each index indicates better water quality.</p>
+
+        <div class="calculator">
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Data Entry</th>
+                    <th>Parameter Range</th>
+                </tr>
+                <tr>
+                    <td>pH</td>
+                    <td><input type="number" id="ph" placeholder="pH"></td>
+                    <td><img src="images/pH.png"></td>
+                </tr>
+                <tr>
+                    <td>Oxidizing ability (mg/L)</td>
+                    <td><input type="number" id="oxidizing" placeholder="Oxidizing Ability (mg/L)"></td>
+                    <td><img src="images/Ox.png"></td>
+                </tr>
+                <tr>
+                    <td>NO₃⁻ (mg/L)</td>
+                    <td><input type="number" id="no3" placeholder="NO₃⁻ (mg/L)"></td>
+                    <td><img src="images/No3.png"></td>
+                </tr>
+                <tr>
+                    <td>Total Hardness (mg/L)</td>
+                    <td><input type="number" id="hardness" placeholder="Total Hardness (mg/L)"></td>
+                    <td><img src="images/Ox.png"></td>
+                </tr>
+                <tr>
+                    <td>TSS (mg/L)</td>
+                    <td><input type="number" id="tss" placeholder="TSS (mg/L)"></td>
+                    <td><img src="images/TSS.png"></td>
+                </tr>
+                <tr>
+                    <td>Cl⁻ (mg/L)</td>
+                    <td><input type="number" id="cl" placeholder="Cl⁻ (mg/L)"></td>
+                    <td><img src="images/Cl.png"></td>
+                </tr>
+                <tr>
+                    <td>SO₄²⁻ (mg/L)</td>
+                    <td><input type="number" id="so4" placeholder="SO₄²⁻ (mg/L)"></td>
+                    <td><img src="images/SO4.png"></td>
+                </tr>
+                <tr>
+                    <td>Fe⁺² ³ (mg/L)</td>
+                    <td><input type="number" id="fe" placeholder="Fe⁺²/³ (mg/L)"></td>
+                    <td><img src="images/Ox.png"></td>
+                </tr>
+                <tr>
+                    <td>F⁻ (mg/L)</td>
+                    <td><input type="number" id="f" placeholder="F⁻ (mg/L)"></td>
+                    <td><img src="images/F.png"></td>
+                </tr>
+                <tr>
+                    <td>Cu⁺² (mg/L)</td>
+                    <td><input type="number" id="cu" placeholder="Cu⁺² (mg/L)"></td>
+                    <td><img src="images/Cu.png"></td>
+                </tr>
+            </table>
+            <div class="index">
+                <div class="result">
+                    <p>Simple Water Quality Index:</p>
+                    <div id="result-box"></div>
+                </div>
+                <div class="joy"></div>
+                <div class="index-range">
+                    <p class="green">Good (81-100)</p>
+                    <p class="yellow">Fair (51-80)</p>
+                    <p class="brown">Marginal (30-50)</p>
+                    <p class="red">Poor (0-29)</p>
+                </div>
+            </div>
+
+
+
+            <div class="submit">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="footer">
+            <p>Water Quality Index Calculation</p>
+            <p>The water quality index is calculated based on measured values for each of the parameters listed...</p>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
