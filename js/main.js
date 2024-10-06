@@ -16,13 +16,13 @@ function result(x) {
 
   function choose_style(x) {
     if (x < 30) {
-      return 'green';
-    } else if (x < 50) {
-      return 'yellow';
-    } else if (x < 80) {
-      return 'brown';
-    } else {
       return 'red';
+    } else if (x < 50) {
+      return 'brown';
+    } else if (x < 80) {
+      return 'yellow';
+    } else {
+      return 'green';
     }
   }
 
@@ -46,7 +46,7 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     // Calculate the sum of all values
     const parametrs=[ph,oxidizing,no3,hardness,tss,cl,so4,fe,f,cu]
     const si=QI(parametrs,p_mid,p_up)
-    const ss = si.map(value => Math.exp(value / 100));
+    const ss = si.map(value => Math.exp(value / 100)-1);
     const S = ss.reduce((acc, val) => acc + val, 0);
     const w = ss.map(value => value / S);
     const wqi = w.reduce((acc, wi,i)=>acc+wi*si[i],0);

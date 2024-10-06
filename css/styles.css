@@ -38,12 +38,12 @@ p {
   background-color: #f7f7f7;
 }
 
-table {
+.calculator table {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
+.calculator th, td {
   padding: 10px;
   text-align: left;
 }
@@ -53,6 +53,11 @@ input[type="number"] {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+img {
+  width: 150px;
+  height: 45px;
 }
 
 .submit {
@@ -103,7 +108,7 @@ button:hover {
 .index-range p {
   border: 1px solid #ccc;
   width: 150px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .green{
@@ -127,12 +132,29 @@ button:hover {
 }
 
 
-.footer {
-  margin-top: 40px;
-  text-align: center;
+.wqi {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-img {
-  width: 150px;
-  height: 45px;
+.wqi table {
+  width: 80%;
+  border: 1px solid #333;
+  border-radius: 10px;
+}
+
+.wqi table  th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: left;
+}
+
+ol{
+  margin: 20px;
 }

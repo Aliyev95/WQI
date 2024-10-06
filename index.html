@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1> Water Quality Index Calculator</h1>
-        <p>An index value is calculated for each of the following water quality parameters: pH, Oxidizing ability, NO₃⁻, Total Hardness, TSS, Cl⁻, SO₄²⁻, Fe⁺²/³, F⁻, Cu⁺². A higher value of each index indicates better water quality.</p>
+        <p>An index value is calculated for each of the following water quality parameters: \(pH\), \(Oxidizing\) \(ability\),\(NO_3^-\), \(Total\) \(Hardness\), \(TSS\), \(Cl^-\), \(SO_{4}^{2-}\), \(Fe^{+2,\,3}\), \(F^-\), \(Cu^{+2}\). A higher value of each index indicates better water quality.</p>
 
         <div class="calculator">
             <table>
@@ -30,7 +30,7 @@
                     <td><img src="images/Ox.png"></td>
                 </tr>
                 <tr>
-                    <td>NO₃⁻ (mg/L)</td>
+                    <td>\(NO_3^-\) (mg/L)</td>
                     <td><input type="number" id="no3" placeholder="NO₃⁻ (mg/L)"></td>
                     <td><img src="images/No3.png"></td>
                 </tr>
@@ -50,13 +50,13 @@
                     <td><img src="images/Cl.png"></td>
                 </tr>
                 <tr>
-                    <td>SO₄²⁻ (mg/L)</td>
+                    <td>\(SO_{4}^{2-}\) (mg/L)</td>
                     <td><input type="number" id="so4" placeholder="SO₄²⁻ (mg/L)"></td>
                     <td><img src="images/SO4.png"></td>
                 </tr>
                 <tr>
                     <td>Fe⁺² ³ (mg/L)</td>
-                    <td><input type="number" id="fe" placeholder="Fe⁺²/³ (mg/L)"></td>
+                    <td><input type="number" id="fe" placeholder="Fe⁺² ³ (mg/L)"></td>
                     <td><img src="images/Ox.png"></td>
                 </tr>
                 <tr>
@@ -77,6 +77,7 @@
                 </div>
                 <div class="joy"></div>
                 <div class="index-range">
+                    <p >WQI</p>
                     <p class="green">Good (81-100)</p>
                     <p class="yellow">Fair (51-80)</p>
                     <p class="brown">Marginal (30-50)</p>
@@ -90,17 +91,58 @@
                 <button type="reset">Reset</button>
                 <button type="submit">Submit</button>
             </div>
-
-
-
-
         </div>
 
+        <div class="wqi">
+            <table>
+                <tr>
+                    <th>WQI    </th>
+                    <th>Interpretation</th>
+                </tr>
+                <tr class="green">
+                    <td >Good <br> (81-100)</td>
+                    <td ><p>Water quality is exceptional, meeting all safety standards for human consumption suggested by various agencies around the world.</p></td>
+                </tr>
+                <tr class="yellow">
+                    <td >Fair <br> (51-80)</td>
+                    <td ><p>Water quality is fair, generally safe for human consumption but may require some treatment to address minor issues.</p></td>
+                </tr>
+                <tr class="brown">
+                    <td >Marginal <br> (30-50)</td>
+                    <td ><p>Water quality is marginal, can sustain aquatic life and ecosystems but may require significant treatment for human consumption.</p></td>
+                </tr>
+                <tr class="red">
+                    <td >Poor <br> (0-29)</td>
+                    <td ><p>Water quality is poor, may be suitable for tolerant species but attention needed for sustaining sensitive aquatic life and ecosystems.</p></td>
+                </tr>
+            </table>
+        </div>
+
+
         <div class="footer">
-            <p>Water Quality Index Calculation</p>
-            <p>The water quality index is calculated based on measured values for each of the parameters listed pH, Oxidizing ability, NO₃⁻, Total Hardness, TSS, Cl⁻, SO₄²⁻, Fe⁺²/³, F⁻, Cu⁺².</p>
+            <h1>Water Quality Index Calculation</h2>
+            <p>The water quality index is calculated based on measured values for each of the parameters listed  \(pH,\) \(Oxidizing\) \(ability\), \(NO_3^-\), \(Total\) \(Hardness\), \(TSS\), \(Cl^-\), \(SO_{4}^{2-}\), \(Fe^{+2,\,3}\), \(F^-\), \(Cu^{+2}\).</p>
+            <br>
+            <h3>The calculation consists of 4 steps</h3>
+
+            <ol>
+                <li>Get the result when the \(i-th\) parameter is measured. Denote it by \(x_i\).</li>
+                <li>Sub-Indexing. Scale each calculated value \(x_i\) to a value between 0 and 1 using the following formula:
+                    <p style="text-align: center;">\(SI_i=\min\left\{1,\left|\frac{x_i-x^{(st)}_i}{x^{(up)}_i-x^{(st)}_i}\right|\right\},\)</p>
+                    <p>where \(x^{(st)}_i\) is the ideal value of the parameter. Whereas, except for pH (ideal value 7), all other parameter's ideal value is zero. \(x^{(up)}_i\) is the standard upper bound for the \(i-th\) parameter</p>
+                </li>
+                <li>Parameter Weighting. \(w_i\) weight for the \(i-th\) parameter is calculated by the following formula.
+                    <p style="text-align: center;">\(W_i=\frac{e^{SI_i}-1}{\sum\limits_{k=1}^{n}(e^{SI_k}-1)}.\)</p>
+                </li>
+                <li>Calculating WQI. WQI is calculated by the following formula</li>
+                <p style="text-align: center;">\(WQI=\sum\limits_{i=1}^{n}w_i\cdot SI_i\cdot 100.\)</p>
+            </ol>
+
+
+
         </div>
     </div>
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
