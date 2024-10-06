@@ -13,69 +13,91 @@
         <p>An index value is calculated for each of the following water quality parameters: \(pH\), \(Oxidizing\) \(ability\),\(NO_3^-\), \(Total\) \(Hardness\), \(TSS\), \(Cl^-\), \(SO_{4}^{2-}\), \(Fe^{+2,\,3}\), \(F^-\), \(Cu^{+2}\). A higher value of each index indicates better water quality.</p>
 
         <div class="calculator">
-            <table>
-                <tr>
-                    <th>Parameter</th>
-                    <th>Data Entry</th>
-                    <th>Parameter Range</th>
-                </tr>
-                <tr>
-                    <td>pH</td>
-                    <td><input type="number" id="ph" placeholder="pH"></td>
-                    <td><img src="images/pH.png"></td>
-                </tr>
-                <tr>
-                    <td>Oxidizing ability (mg/L)</td>
-                    <td><input type="number" id="oxidizing" placeholder="Oxidizing Ability (mg/L)"></td>
-                    <td><img src="images/Ox.png"></td>
-                </tr>
-                <tr>
-                    <td>\(NO_3^-\) (mg/L)</td>
-                    <td><input type="number" id="no3" placeholder="NO₃⁻ (mg/L)"></td>
-                    <td><img src="images/No3.png"></td>
-                </tr>
-                <tr>
-                    <td>Total Hardness (mg/L)</td>
-                    <td><input type="number" id="hardness" placeholder="Total Hardness (mg/L)"></td>
-                    <td><img src="images/Ox.png"></td>
-                </tr>
-                <tr>
-                    <td>TSS (mg/L)</td>
-                    <td><input type="number" id="tss" placeholder="TSS (mg/L)"></td>
-                    <td><img src="images/TSS.png"></td>
-                </tr>
-                <tr>
-                    <td>Cl⁻ (mg/L)</td>
-                    <td><input type="number" id="cl" placeholder="Cl⁻ (mg/L)"></td>
-                    <td><img src="images/Cl.png"></td>
-                </tr>
-                <tr>
-                    <td>\(SO_{4}^{2-}\) (mg/L)</td>
-                    <td><input type="number" id="so4" placeholder="SO₄²⁻ (mg/L)"></td>
-                    <td><img src="images/SO4.png"></td>
-                </tr>
-                <tr>
-                    <td>Fe⁺² ³ (mg/L)</td>
-                    <td><input type="number" id="fe" placeholder="Fe⁺² ³ (mg/L)"></td>
-                    <td><img src="images/Ox.png"></td>
-                </tr>
-                <tr>
-                    <td>F⁻ (mg/L)</td>
-                    <td><input type="number" id="f" placeholder="F⁻ (mg/L)"></td>
-                    <td><img src="images/F.png"></td>
-                </tr>
-                <tr>
-                    <td>Cu⁺² (mg/L)</td>
-                    <td><input type="number" id="cu" placeholder="Cu⁺² (mg/L)"></td>
-                    <td><img src="images/Cu.png"></td>
-                </tr>
-            </table>
-            <div class="index">
+            <div>
+                <div class="rowth">
+                    <strong>Parameter</strong>
+                    <strong>Data Entry</strong>
+                    <strong class="no">Parameter Range</strong>
+                </div>
+
+                <div class="row">
+                    <div class="row2">
+                        <div>pH</div>
+                        <div><input type="number" id="ph" placeholder="pH"></div>
+                    </div>
+                    <div><img class="no" src="images/pH.png"><img class="on" src="images/pHm.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>Oxidizing ability (mg/L)</div>
+                        <div><input type="number" id="oxidizing" placeholder="Oxidizing Ability (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/Ox.png"><img class="on" src="images/Oxm.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>\(NO_3^-\) (mg/L)</div>
+                        <div><input type="number" id="no3" placeholder="NO₃⁻ (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/No3.png"><img class="on" src="images/NO3m.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>Total Hardness (mg/L)</div>
+                        <div><input type="number" id="hardness" placeholder="Total Hardness (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/Ox.png"><img class="on" src="images/Oxm.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>TSS (mg/L)</div>
+                        <div><input type="number" id="tss" placeholder="TSS (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/TSS.png"><img class="on" src="images/TSSm.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>Cl⁻ (mg/L)</div>
+                        <div><input type="number" id="cl" placeholder="Cl⁻ (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/Cl.png"><img class="on" src="images/Clm.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>\(SO_{4}^{2-}\) (mg/L)</div>
+                        <div><input type="number" id="so4" placeholder="SO₄²⁻ (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/SO4.png"><img class="on" src="images/SO4m.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>Fe⁺² ³ (mg/L)</div>
+                        <div><input type="number" id="fe" placeholder="Fe⁺² ³ (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/Ox.png"><img class="on" src="images/Oxm.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>F⁻ (mg/L)</div>
+                        <div><input type="number" id="f" placeholder="F⁻ (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/F.png"><img class="on" src="images/Fm.png"></div>
+                </div>
+                <div class="row">
+                    <div class="row2">
+                        <div>Cu⁺² (mg/L)</div>
+                        <div><input type="number" id="cu" placeholder="Cu⁺² (mg/L)"></div>
+                    </div>
+                    <div><img  class="no" src="images/Cu.png"><img class="on" src="images/Cum.png"></div>
+                </div>
+            </div>
+
+            <div class="index row">
                 <div class="result">
                     <p>Simple Water Quality Index:</p>
                     <div id="result-box"></div>
                 </div>
-                <div class="joy"></div>
+                <div class="joy no"></div>
                 <div class="index-range">
                     <p >WQI</p>
                     <p class="green">Good (81-100)</p>
@@ -120,7 +142,7 @@
 
 
         <div class="footer">
-            <h1>Water Quality Index Calculation</h2>
+            <h2>Water Quality Index Calculation</h2>
             <p>The water quality index is calculated based on measured values for each of the parameters listed  \(pH,\) \(Oxidizing\) \(ability\), \(NO_3^-\), \(Total\) \(Hardness\), \(TSS\), \(Cl^-\), \(SO_{4}^{2-}\), \(Fe^{+2,\,3}\), \(F^-\), \(Cu^{+2}\).</p>
             <br>
             <h3>The calculation consists of 4 steps</h3>
