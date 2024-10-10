@@ -29,8 +29,8 @@ function result(x) {
 document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
     event.preventDefault();
     //Low Up parametrs
-    const p_up=[9,10,45,10,1500,350,500,10,0.7,1]
-    const p_mid=[7,0,0,0,0,0,0,0,0,0]
+    const p_up=[9,5,45,10,1500,350,500,0.3,0.7,1]
+    const p_mid=[7.5,0,0,7,875,0,0,0,0,0]
     // Get values of each parameter
     const ph = parseFloat(document.getElementById('ph').value) || 0;
     const oxidizing = parseFloat(document.getElementById('oxidizing').value) || 0;
@@ -67,3 +67,14 @@ document.querySelector('button[type="reset"]').addEventListener('click', functio
     resultBox.innerText = '';
     resultBox.classList.remove('green', 'yellow', 'brown', 'red');
 });
+
+function toggleNavBar() {
+  var navbar = document.getElementById("navbar");
+
+  // Toggle the active class to show or hide the links
+  if (navbar.classList.contains("active")) {
+      navbar.classList.remove("active");
+  } else {
+      navbar.classList.add("active");
+  }
+}

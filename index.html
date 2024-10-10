@@ -8,9 +8,30 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="header">
+        <!-- Navigation Bar -->
+        <div class="navbar" id="navbar">
+            <div class="buttons">
+                <span class="icon" onclick="toggleNavBar()">&#9776;</span>
+                <div>
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/1920px-Flag_of_Uzbekistan.svg.png" alt="Uzbek" class="">
+                    </a>
+                    <a href="#">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png" alt="English" class="actimg">
+                    </a>
+                </div>
+            </div>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#documents">Regulatory Documents</a>
+        </div>
+    </div>
+
     <div class="container">
         <h1> Water Quality Index Calculator</h1>
-        <p>An index value is calculated for each of the following water quality parameters: \(pH\), \(Oxidizing\) \(ability\),\(NO_3^-\), \(Total\) \(Hardness\), \(TSS\), \(Cl^-\), \(SO_{4}^{2-}\), \(Fe^{+2,\,3}\), \(F^-\), \(Cu^{+2}\). A higher value of each index indicates better water quality.</p>
+        <p>This calculator determines the Water Quality Index (WQI) of underground drinking water in accordance with the following ten parameters:  pH distribution (\(pH\)), Oxidizing ability of KMnO₄ (\(OA\)), Nitrate(\(NO_3^-\)), Total Hardness (\(TH\)), Total dissolved solids (\(TDS\)), Chloride (\(Cl^-\)), Sulfate (\(SO_{4}^{2-}\)), Iron (\(Fe^{+2,\,3}\)),   Fluoride  (\(F^-\)), Copper (\(Cu^{+2}\)). A higher value of each index indicates better water quality.</p>
 
         <div class="calculator">
             <div>
@@ -29,10 +50,10 @@
                 </div>
                 <div class="row">
                     <div class="row2">
-                        <div>Oxidizing ability (mg/L)</div>
+                        <div>OA (mg/L)</div>
                         <div><input type="number" id="oxidizing" placeholder="Oxidizing Ability (mg/L)"></div>
                     </div>
-                    <div><img  class="no" src="images/Ox.png"><img class="on" src="images/Oxm.png"></div>
+                    <div><img  class="no" src="images/OA.png"><img class="on" src="images/OAm.png"></div>
                 </div>
                 <div class="row">
                     <div class="row2">
@@ -43,14 +64,14 @@
                 </div>
                 <div class="row">
                     <div class="row2">
-                        <div>Total Hardness (mg/L)</div>
+                        <div>TH (mg/L)</div>
                         <div><input type="number" id="hardness" placeholder="Total Hardness (mg/L)"></div>
                     </div>
-                    <div><img  class="no" src="images/Ox.png"><img class="on" src="images/Oxm.png"></div>
+                    <div><img  class="no" src="images/TH.png"><img class="on" src="images/THm.png"></div>
                 </div>
                 <div class="row">
                     <div class="row2">
-                        <div>TSS (mg/L)</div>
+                        <div>TDS (mg/L)</div>
                         <div><input type="number" id="tss" placeholder="TSS (mg/L)"></div>
                     </div>
                     <div><img  class="no" src="images/TSS.png"><img class="on" src="images/TSSm.png"></div>
@@ -74,7 +95,7 @@
                         <div>Fe⁺² ³ (mg/L)</div>
                         <div><input type="number" id="fe" placeholder="Fe⁺² ³ (mg/L)"></div>
                     </div>
-                    <div><img  class="no" src="images/Ox.png"><img class="on" src="images/Oxm.png"></div>
+                    <div><img  class="no" src="images/FE.png"><img class="on" src="images/Fem.png"></div>
                 </div>
                 <div class="row">
                     <div class="row2">
@@ -123,7 +144,7 @@
                 </tr>
                 <tr class="green">
                     <td >Good <br> (81-100)</td>
-                    <td ><p>Water quality is exceptional, meeting all safety standards for human consumption suggested by various agencies around the world.</p></td>
+                    <td ><p>Water quality is excellent. Water in this category meets all safety standards recommended for human consumption by organizations worldwide.</p></td>
                 </tr>
                 <tr class="yellow">
                     <td >Fair <br> (51-80)</td>
@@ -131,11 +152,11 @@
                 </tr>
                 <tr class="brown">
                     <td >Marginal <br> (30-50)</td>
-                    <td ><p>Water quality is marginal, can sustain aquatic life and ecosystems but may require significant treatment for human consumption.</p></td>
+                    <td ><p>Water quality is marginal. This type of water partially meets the needs of aquatic organisms and ecosystems, but it requires serious measures to improve water quality for human consumption.</p></td>
                 </tr>
                 <tr class="red">
                     <td >Poor <br> (0-29)</td>
-                    <td ><p>Water quality is poor, may be suitable for tolerant species but attention needed for sustaining sensitive aquatic life and ecosystems.</p></td>
+                    <td ><p>Water quality is poor or unsuitable. Water in this category may support tolerant organisms, but strict measures are needed to enhance water quality for sensitive organisms and agro-ecosystems.</p></td>
                 </tr>
             </table>
         </div>
@@ -143,7 +164,7 @@
 
         <div class="footer">
             <h2>Water Quality Index Calculation</h2>
-            <p>The water quality index is calculated based on measured values for each of the parameters listed  \(pH,\) \(Oxidizing\) \(ability\), \(NO_3^-\), \(Total\) \(Hardness\), \(TSS\), \(Cl^-\), \(SO_{4}^{2-}\), \(Fe^{+2,\,3}\), \(F^-\), \(Cu^{+2}\).</p>
+            <p>The water quality index is calculated based on measured values for each of the parameters listed  \(pH,\) \(OA,\) \(NO_3^-,\) \(TH,\) \(TSS,\) \(Cl^-,\) \(SO_{4}^{2-},\) \(Fe^{+2,\,3},\) \(F^-,\) \(Cu^{+2}.\)</p>
             <br>
             <h3>The calculation consists of 4 steps</h3>
 
@@ -162,6 +183,45 @@
 
 
 
+        </div>
+    </div>
+    <div class="contacts container">
+        <h2>Contacts</h2>
+        <div class="borderbox">
+            <div class="border"></div>
+        </div>
+        <div class="index rowc">
+            <div class="address ">
+                <div class="name">
+                    <img src="/images/avatar.png"alt="">
+                    <h3>Nilufar Rajabova</h3></div>
+                <div class="phone">
+                    <ul>
+                        <li>+998932037532</li>
+                        <li>+998993139416</li>
+                    </ul>
+                </div>
+                <div class="email">
+                    <ul>
+                        <li>ni.rajabova@nuu.uz </li>
+                        <li>nilufarrajabova171@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <a href="https://t.me/ALCHEMISTPhD">
+                        <img src="/images/Telegram.png">
+                    </a>
+
+                    <img src="/images/whatsup.png">
+                    <img src="/images/Wechat.png">
+                    <a href="https://www.researchgate.net/profile/Nilufar-Rajabova-3">
+                        <img src="/images/ResearchGate.png">
+                    </a>
+                </div>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.2118702689954!2d69.20067741163714!3d41.34774837118516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8d80933c345b%3A0x29d27c39dc5e80ab!2sNUU%20Faculty%20of%20Biology!5e0!3m2!1sen!2s!4v1728529507738!5m2!1sen!2s"   style="border:0;"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </div>
     <script src="js/main.js"></script>
