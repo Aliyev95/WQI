@@ -15,32 +15,32 @@
                 <span class="icon" onclick="toggleNavBar()">&#9776;</span>
                 <div>
                     <a href="indexuz.html">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/1920px-Flag_of_Uzbekistan.svg.png" alt="Uzbek" class="">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/1920px-Flag_of_Uzbekistan.svg.png" alt="Uzbek" class="actimg">
                     </a>
                     <a href="index.html">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png" alt="English" class="actimg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png" alt="English">
                     </a>
                 </div>
             </div>
 
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="https://lex.uz/docs/-1935398" target="_blank">Regulatory Documents</a>
+            <a href="indexuz.html">Bosh sahifa</a>
+            <a href="aboutuz.html">Biz haqimizda</a>
+            <a href="https://lex.uz/docs/-1935398" target="_blank">Meyoriy xujjatlar</a>
         </div>
     </div>
 
     <div class="container">
-        <h1> Water Quality Index Calculator</h1>
+        <h1> Suv Sifati Indeksi (WQI) Hisoblash</h1>
         <p>
-            This calculator determines the Water Quality Index (WQI) of underground drinking water in accordance with the following ten parameters:  pH distribution (\(pH\)), Oxidizing ability of KMnO₄ (\(OA\)), Nitrate(\(NO_3^-\)), Total Hardness (\(TH\)), Total dissolved solids (\(TDS\)), Chloride (\(Cl^-\)), Sulfate (\(SO_{4}^{2-}\)), Iron (\(Fe^{+2,\,3}\)),   Fluoride  (\(F^-\)), Copper (\(Cu^{+2}\)).
+          Yer osti ichimlik suvining sifati indeksini hisoblaydigan ushbu kalkulyator quyidagi o'nta indikator bo'yicha hisoblaydi:  (\(pH\)), (\(OA\)), (\(NO_3^-\)), (\(TH\)),  (\(TDS\)),  (\(Cl^-\)),  (\(SO_{4}^{2-}\)),  (\(Fe^{+2,\,3}\)),   (\(F^-\)),  (\(Cu^{+2}\)).
         </p>
 
         <div class="calculator">
             <div class="row2">
-                <div>Name</div>
+                <div>Ism</div>
                 <div class="name">
-                    <input type="text" id="first" placeholder="First name">
-                    <input type="text" id="last" placeholder="Last name">
+                    <input type="text" id="first" placeholder="Ism">
+                    <input type="text" id="last" placeholder="Familiya">
                 </div>
             </div>
             <div class="row2">
@@ -48,17 +48,17 @@
                 <input type="text" id="email" placeholder="Email">
             </div>
             <div class="row2">
-                <div>Office</div>
-                <input type="text" id="office" placeholder="Office">
+                <div>Ish joyi</div>
+                <input type="text" id="office" placeholder="Ish joyi">
             </div>
         </div>
 
         <div class="calculator">
             <div>
                 <div class="rowth">
-                    <strong>Parameter</strong>
-                    <strong>Data Entry</strong>
-                    <strong class="no">Parameter Range</strong>
+                    <strong>Parametr</strong>
+                    <strong>Parametr qiymati</strong>
+                    <strong class="no">Parametr Diapazoni</strong>
                 </div>
 
                 <div class="row">
@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="row2">
                         <div>OA (mg/L)</div>
-                        <div><input type="number" id="oxidizing" placeholder="Oxidizing Ability (mg/L)"></div>
+                        <div><input type="number" id="oxidizing" placeholder="Oksidlanish qobiliyati (mg/L)"></div>
                     </div>
                     <div><img  class="no" src="images/OA.png"><img class="on" src="images/OAm.png"></div>
                 </div>
@@ -85,14 +85,14 @@
                 <div class="row">
                     <div class="row2">
                         <div>TH (mg/L)</div>
-                        <div><input type="number" id="hardness" placeholder="Total Hardness (mg/L)"></div>
+                        <div><input type="number" id="hardness" placeholder="umumiy qattiqlik (mg/L)"></div>
                     </div>
                     <div><img  class="no" src="images/TH.png"><img class="on" src="images/THm.png"></div>
                 </div>
                 <div class="row">
                     <div class="row2">
                         <div>TDS (mg/L)</div>
-                        <div><input type="number" id="tss" placeholder="TDS (mg/L)"></div>
+                        <div><input type="number" id="tss" placeholder="TSS (mg/L)"></div>
                     </div>
                     <div><img  class="no" src="images/TSS.png"><img class="on" src="images/TSSm.png"></div>
                 </div>
@@ -135,24 +135,24 @@
 
             <div class="index row">
                 <div class="result">
-                    <p>Dynamic Unweghted Water Quality Index:</p>
+                    <p>Dinamik Vaznsiz o'rtacha Suv Sifati Indeksi(WQI):</p>
                     <div id="result-box"></div>
                 </div>
                 <div class="joy no"></div>
                 <div class="index-range">
                     <p >WQI</p>
-                    <p class="green">Good (81-100)</p>
-                    <p class="yellow">Fair (51-80)</p>
-                    <p class="brown">Marginal (30-50)</p>
-                    <p class="red">Poor (0-29)</p>
+                    <p class="green">Yaxshi (81-100)</p>
+                    <p class="yellow">O'rtacha (51-80)</p>
+                    <p class="brown">Qoniqarli (30-50)</p>
+                    <p class="red">Qoniqarsiz (0-29)</p>
                 </div>
             </div>
 
 
 
             <div class="submit">
-                <button type="reset">Reset</button>
-                <button type="submit">Submit</button>
+                <button type="reset">Qayta yuklash</button>
+                <button type="submit">Jo'natsh</button>
             </div>
         </div>
 
@@ -160,44 +160,44 @@
             <table>
                 <tr>
                     <th>WQI    </th>
-                    <th>Interpretation</th>
+                    <th>Tavsif</th>
                 </tr>
                 <tr class="green">
-                    <td >Good <br> (81-100)</td>
-                    <td ><p>Water quality is excellent. Water in this category meets all safety standards recommended for human consumption by organizations worldwide.</p></td>
+                    <td >Yaxshi <br> (81-100)</td>
+                    <td ><p>Bu toifadagi suv a'lo darajadagi sifatga ega bo'lib, yer yuzasidagi mavjud tashkilotlar tomonidan tavsiya etilgan inson iste'moli uchun barcha xavfsizlik standartlariga javob beradi.</p></td>
                 </tr>
                 <tr class="yellow">
-                    <td >Fair <br> (51-80)</td>
-                    <td ><p>Water quality is fair, generally safe for human consumption but may require some treatment to address minor issues.</p></td>
+                    <td >O'rtacha <br> (51-80)</td>
+                    <td ><p>Bu toifadagi suv o'rtacha sifatga mansub bo'lib, inson iste'moli uchun umuman xavfsiz, lekin kichik muammolarni hal qilish uchun ba'zi suv sifatini yaxshilash uchun chora-tadbirlar amalga oshirilishini talab qilishi mumkin.</p></td>
                 </tr>
                 <tr class="brown">
-                    <td >Marginal <br> (30-50)</td>
-                    <td ><p>Water quality is marginal. This type of water partially meets the needs of aquatic organisms and ecosystems, but it requires serious measures to improve water quality for human consumption.</p></td>
+                    <td >Qoniqarli <br> (30-50)</td>
+                    <td ><p>Bu toifadagi suv qoniqarli sifat darajasiga ega bo'lib, suv organizmlari va ekosistemalar uchun qisman talabga javob beradi, lekin inson iste'moli uchun jiddiy ishlov berishni talab qilishi mumkin.</p></td>
                 </tr>
                 <tr class="red">
-                    <td >Poor <br> (0-29)</td>
-                    <td ><p>Water quality is poor or unsuitable. Water in this category may support tolerant organisms, but strict measures are needed to enhance water quality for sensitive organisms and agro-ecosystems.</p></td>
+                    <td >Foydalanishga yaroqsiz <br> (0-29)</td>
+                    <td ><p>Bu toifadagi suv foydalanishga yaroqsiz bo'lib, tolerant organizmlar uchun mos bo'lishi mumkin, lekin sezgir organizmlar va  agro-ekosistemalarning suvga bo'lgan ehtiyojini qondirishda foydalanish uchun qat'iy chora-tadbirlarni amalga oshirishni talab qiladi.</p></td>
                 </tr>
             </table>
         </div>
 
 
         <div class="footer">
-            <h2>Water Quality Index Calculation</h2>
-            <p>The water quality index is calculated based on measured values for each of the parameters listed  \(pH,\) \(OA,\) \(NO_3^-,\) \(TH,\) \(TSS,\) \(Cl^-,\) \(SO_{4}^{2-},\) \(Fe^{+2,\,3},\) \(F^-,\) \(Cu^{+2}.\)</p>
+            <h2>Suv Sifati Indeksi(WQI)ni hisoblash</h2>
+            <p>Yer osti ichimlik suvining sifati indeksini hisoblaydigan ushbu kalkulyator quyidagi o'nta indikator bo'yicha hisoblaydi:  \(pH,\) \(OA,\) \(NO_3^-,\) \(TH,\) \(TSS,\) \(Cl^-,\) \(SO_{4}^{2-},\) \(Fe^{+2,\,3},\) \(F^-,\) \(Cu^{+2}.\)</p>
             <br>
-            <h3>The calculation consists of 4 steps</h3>
+            <h3>Hisoblash jarayoni 4 bosqichdan iborat</h3>
 
             <ol>
-                <li>Get the result when the \(i-th\) parameter is measured. Denote it by \(x_i\).</li>
-                <li>Sub-Indexing. Scale each calculated value \(x_i\) to a value between 0 and 1 using the following formula:
+                <li>Har bir  \(i-\) parametr qiymati olinadi. Uni\(x_i\) bilan belgilaylik.</li>
+                <li>Sub-Index hisoblash. Har bir olingan \(x_i\) qiymat 0 va 1 oralig'idagi songa masshabi quyidagi formula yordamida olinadi:
                     <p style="text-align: center;">\(SI_i=\min\left\{1,\left|\frac{x_i-x^{(st)}_i}{x^{(up)}_i-x^{(st)}_i}\right|\right\},\)</p>
-                    <p>where \(x^{(st)}_i\) is the ideal value of the parameter. \(x^{(up)}_i\) is the standard upper bound for the \(i-th\) parameter</p>
+                    <p>bu yerda  \(x^{(st)}_i\) parametr uchun suv eng yaxshi bo'lgandagi qiymat, \(x^{(up)}_i\) esa \(i-\) parametr uchun standartdagi yuqori chegara.</p>
                 </li>
-                <li>Parameter Weighting. \(w_i\) weight for the \(i-th\) parameter is calculated by the following formula.
+                <li>Parametr uchun vazn hisoblash. \(w_i\) bilan har bir  \(i-\) parametr  uchun quyidagi formula bilan hisoblanadigan vaznni belgilaymiz.
                     <p style="text-align: center;">\(W_i=\frac{e^{SI_i}-1}{\sum\limits_{k=1}^{n}(e^{SI_k}-1)}.\)</p>
                 </li>
-                <li>Calculating WQI. WQI is calculated by the following formula</li>
+                <li>WQI hisoblash. WQI quyidagi formula orqali hisoblanadi</li>
                 <p style="text-align: center;">\(WQI=\sum\limits_{i=1}^{n}w_i\cdot SI_i\cdot 100.\)</p>
             </ol>
 
@@ -206,7 +206,7 @@
         </div>
     </div>
     <div class="contacts container">
-        <h2>Contacts</h2>
+        <h2>Bog'lanish uchun</h2>
         <div class="borderbox">
             <div class="border"></div>
         </div>
