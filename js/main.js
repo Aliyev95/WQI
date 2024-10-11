@@ -26,6 +26,23 @@ function result(x) {
     }
   }
 
+  function colour(x) {
+    const { PDFDocument, rgb } = PDFLib;
+    const green=rgb(197/255,224/255,179/255);
+    const yellow=rgb(1, 229/255, 153/255);
+    const brown=rgb(247/255,202/255,172/255);
+    const red=rgb(1, 137/255,137/255);
+    if (x < 30) {
+      return red;
+    } else if (x < 50) {
+      return brown;
+    } else if (x < 80) {
+      return yellow;
+    } else {
+      return green;
+    }
+  }
+
 document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
     event.preventDefault();
     //Low Up parametrs
@@ -59,6 +76,11 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     resultBox.classList.remove('green', 'yellow', 'brown', 'red');
     const chosenStyle = choose_style(WQI);
     resultBox.classList.add(chosenStyle);
+
+  //Write PDF document
+  generatePDF(ph,oxidizing,no3,hardness,tss,cl,so4,fe,f,cu,WQI.toFixed(0))
+
+
 });
 
 document.querySelector('button[type="reset"]').addEventListener('click', function() {
@@ -77,4 +99,64 @@ function toggleNavBar() {
   } else {
       navbar.classList.add("active");
   }
+}
+
+async function generatePDF(ph,oxidizing,no3,hardness,tss,cl,so4,fe,f,cu,WQI) {
+const { PDFDocument, rgb } = PDFLib;
+
+// Fetch the existing PDF
+const url = 'Doc.pdf'; // Path to your uploaded PDF
+const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
+
+// Load the PDF into PDFLib
+const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+// Get the first page of the document
+const pages = pdfDoc.getPages();
+const firstPage = pages[0];
+
+
+// Add text to the specific locations in the PDF (x, y coordinates are placeholders)
+firstPage.drawText(`${ph}`, { x: 255, y: 315, size: 8, color: rgb(0, 0, 0) });
+firstPage.drawText(`${oxidizing}`, {x: 255, y: 303, size: 8, color: rgb(0, 0, 0) });
+firstPage.drawText(`${no3}`, { x: 255, y: 291, size: 8, color: rgb(0, 0, 0)  });
+firstPage.drawText(`${hardness}`, { x: 255, y: 279, size: 8, color: rgb(0, 0, 0) });
+firstPage.drawText(`${tss}`, { x: 255, y: 267, size: 8, color: rgb(0, 0, 0) });
+firstPage.drawText(`${cl}`, { x: 255, y: 255, size: 8, color: rgb(0, 0, 0) });
+firstPage.drawText(`${so4}`, { x: 255, y: 243, size: 8, color: rgb(0, 0, 0) });
+firstPage.drawText(`${fe}`, { x: 255, y: 231, size: 8, color: rgb(0, 0, 0) });
+firstPage.drawText(`${f}`, { x: 255, y: 219, size: 8, color: rgb(0, 0, 0) });
+firstPage.drawText(`${cu}`, { x: 255, y: 207, size: 8, color: rgb(0, 0, 0) });
+
+// Get the dimensions of the page to place the rectangle in the middle
+const { width, height } = firstPage.getSize();
+
+// Calculate the position to center the rectangle
+const rectWidth = 232;
+const rectHeight = 118;
+const x = (width +228- rectWidth) / 2; // Center horizontally
+const y = (height-314 - rectHeight) / 2; // Center vertically
+
+// Draw a red rectangle in the center of the page
+firstPage.drawRectangle({
+    x: x, // X coordinate (centered)
+    y: y, // Y coordinate (centered)
+    width: rectWidth, // Rectangle width
+    height: rectHeight, // Rectangle height
+    color: colour(WQI), // Red color (RGB)
+});
+
+//Write results in rectangle
+firstPage.drawText(`${WQI}`, { x: x+rectWidth/2-15, y: y+rectHeight/2+20, size: 12, color: rgb(0, 0, 0) });
+firstPage.drawText(result(WQI), { x: x+rectWidth/2-20, y: y+rectHeight/2, size: 12, color: rgb(0, 0, 0) });
+
+// Serialize the PDF document to bytes (a Uint8Array)
+const pdfBytes = await pdfDoc.save();
+
+// Trigger the download
+const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+const link = document.createElement('a');
+link.href = URL.createObjectURL(blob);
+link.download = 'DUAWQI-result.pdf';
+link.click();
 }
