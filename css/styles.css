@@ -89,7 +89,9 @@ p {
   padding: 5px;
 
 }
-
+.centr{
+  align-items: center;
+}
 .row {
   display: flex;
   justify-content: space-between;
@@ -115,6 +117,16 @@ input[type="number"] {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+input[type="text"] {
+  margin: 2px;
+  width: 405px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.name input{
+  width: 200px;
 }
 
 img {
@@ -171,6 +183,7 @@ button:hover {
   border: 1px solid #ccc;
   width: 150px;
   margin-bottom: 2px;
+  text-align: center;
 }
 
 .green{
@@ -347,6 +360,7 @@ height: 240px;
   }
   .row {
     flex-direction: column;
+    align-items: flex-start;
   }
   .rowc {
     flex-direction: column;
@@ -389,6 +403,9 @@ height: 240px;
   }
   .buttons a{
     display: block;
+  }
+  input[type="text"]{
+    width: 100%;
   }
 }
 

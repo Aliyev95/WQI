@@ -49,6 +49,10 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     const p_up=[9,5,45,10,1500,350,500,0.3,0.7,1]
     const p_mid=[7.5,0,0,7,875,0,0,0,0,0]
     // Get values of each parameter
+    let first = document.getElementById('first').value;
+    let last = document.getElementById('last').value;
+    let email = document.getElementById('email').value;
+    let office = document.getElementById('office').value;
     const ph = parseFloat(document.getElementById('ph').value) || 0;
     const oxidizing = parseFloat(document.getElementById('oxidizing').value) || 0;
     const no3 = parseFloat(document.getElementById('no3').value) || 0;
@@ -79,6 +83,40 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
 
   //Write PDF document
   generatePDF(ph,oxidizing,no3,hardness,tss,cl,so4,fe,f,cu,WQI.toFixed(0))
+
+  //send form
+
+  // URL of the Google Form's action
+  const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-MjA1j7lOPTLadj3wDzTGXqDfMJDaN4e4GFuU7g1v9sTMKw/formResponse";
+  // Prepare the data to be submitted (entry.xxxxx should match Google's field names)
+  let formData = new FormData();
+  formData.append('entry.1690286322', last);
+  formData.append('entry.1965353925', first);
+  formData.append('entry.142142440', email);
+  formData.append('entry.954433640', office);
+  //ph,oxidizing,no3,hardness,tss,cl,so4,fe,f,cu
+  formData.append('entry.1492698531', ph);
+  formData.append('entry.726178459', oxidizing);
+  formData.append('entry.1683066279', no3);
+  formData.append('entry.1755912926', hardness);
+  formData.append('entry.1290400018', tss);
+  formData.append('entry.578834199', cl);
+  formData.append('entry.546646515', so4);
+  formData.append('entry.255324347', fe);
+  formData.append('entry.1493256107', f);
+  formData.append('entry.897336776', cu);
+  formData.append('entry.887913925', WQI.toFixed(0));
+  formData.append('entry.432275055', result(WQI));
+
+  // Submit the data to Google Form
+  fetch(googleFormUrl, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+    }).then(() => {
+    }).catch((error) => {
+        console.error('Error!', error.message);
+    });
 
 
 });
