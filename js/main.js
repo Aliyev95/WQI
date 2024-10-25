@@ -87,26 +87,26 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
   //send form
 
   // URL of the Google Form's action
-  const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-MjA1j7lOPTLadj3wDzTGXqDfMJDaN4e4GFuU7g1v9sTMKw/formResponse";
+  const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdpMbE6CLKF4v51Lm1sTtYZQk1Jv-FRbVT7IZ-zyNKfo0TNZw/formResponse";
   // Prepare the data to be submitted (entry.xxxxx should match Google's field names)
   let formData = new FormData();
-  formData.append('entry.1690286322', last);
-  formData.append('entry.1965353925', first);
-  formData.append('entry.142142440', email);
-  formData.append('entry.954433640', office);
+  formData.append('entry.434683221', last);
+  formData.append('entry.1340002733', first);
+  formData.append('entry.859218483', email);
+  formData.append('entry.1300176277', office);
   //ph,oxidizing,no3,hardness,tss,cl,so4,fe,f,cu
-  formData.append('entry.1492698531', ph);
-  formData.append('entry.726178459', oxidizing);
-  formData.append('entry.1683066279', no3);
-  formData.append('entry.1755912926', hardness);
-  formData.append('entry.1290400018', tss);
-  formData.append('entry.578834199', cl);
-  formData.append('entry.546646515', so4);
-  formData.append('entry.255324347', fe);
-  formData.append('entry.1493256107', f);
-  formData.append('entry.897336776', cu);
-  formData.append('entry.887913925', WQI.toFixed(0));
-  formData.append('entry.432275055', result(WQI));
+  formData.append('entry.507319800', ph);
+  formData.append('entry.1251398729', oxidizing);
+  formData.append('entry.170735898', no3);
+  formData.append('entry.606171558', hardness);
+  formData.append('entry.214006383', tss);
+  formData.append('entry.1056698573', cl);
+  formData.append('entry.1278441196', so4);
+  formData.append('entry.226121631', fe);
+  formData.append('entry.919169081', f);
+  formData.append('entry.856411756', cu);
+  formData.append('entry.1793892489', WQI.toFixed(0));
+  formData.append('entry.1491637305', result(WQI));
 
   // Submit the data to Google Form
   fetch(googleFormUrl, {

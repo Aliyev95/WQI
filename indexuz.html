@@ -30,9 +30,9 @@
     </div>
 
     <div class="container">
-        <h1> Suv Sifati Indeksi (WQI) Hisoblash</h1>
+        <h1> Suvning Sifat Indeksini (WQI) Hisoblash</h1>
         <p>
-          Yer osti ichimlik suvining sifati indeksini hisoblaydigan ushbu kalkulyator quyidagi o'nta indikator bo'yicha hisoblaydi:  (\(pH\)), (\(OA (KMnO_4)\)), (\(NO_3^-\)), (\(TH\)),  (\(TDS\)),  (\(Cl^-\)),  (\(SO_{4}^{2-}\)),  (\(Fe^{+2}\)),   (\(F^-\)),  (\(Cu^{+2}\)).
+          Yer osti ichimlik suvining sifat indeksini hisoblaydigan ushbu kalkulyator quyidagi o'nta indikator bo'yicha hisoblaydi:  (\(pH\)), (\(OA (KMnO_4)\)), (\(NO_3^-\)), (\(TH\)),  (\(TDS\)),  (\(Cl^-\)),  (\(SO_{4}^{2-}\)),  (\(Fe^{2+}\)),   (\(F^-\)),  (\(Cu^{2+}\)).
         </p>
 
         <div class="calculator">
@@ -85,7 +85,7 @@
                 <div class="row">
                     <div class="row2">
                         <div>TH (mg-ekv/dm³)</div>
-                        <div><input type="number" id="hardness" placeholder="umumiy qattiqlik (mg-ekv/dm³)"></div>
+                        <div><input type="number" id="hardness" placeholder="umumiy qattiqlik(mg-ekv/dm³)"></div>
                     </div>
                     <div><img  class="no" src="images/TH.png"><img class="on" src="images/THm.png"></div>
                 </div>
@@ -112,8 +112,8 @@
                 </div>
                 <div class="row">
                     <div class="row2">
-                        <div>Fe⁺² (mg/L)</div>
-                        <div><input type="number" id="fe" placeholder="Fe⁺² (mg/L)"></div>
+                        <div>Fe²⁺ (mg/L)</div>
+                        <div><input type="number" id="fe" placeholder="Fe²⁺ (mg/L)"></div>
                     </div>
                     <div><img  class="no" src="images/FE.png"><img class="on" src="images/Fem.png"></div>
                 </div>
@@ -126,8 +126,8 @@
                 </div>
                 <div class="row">
                     <div class="row2">
-                        <div>Cu⁺² (mg/L)</div>
-                        <div><input type="number" id="cu" placeholder="Cu⁺² (mg/L)"></div>
+                        <div>Cu²⁺ (mg/L)</div>
+                        <div><input type="number" id="cu" placeholder="Cu²⁺ (mg/L)"></div>
                     </div>
                     <div><img  class="no" src="images/Cu.png"><img class="on" src="images/Cum.png"></div>
                 </div>
@@ -183,14 +183,14 @@
 
 
         <div class="footer">
-            <h2>Suv Sifati Indeksi(WQI)ni hisoblash</h2>
-            <p>Yer osti ichimlik suvining sifati indeksini hisoblaydigan ushbu kalkulyator quyidagi o'nta indikator bo'yicha hisoblaydi:  \(pH,\) \(OA (KMnO_4),\) \(NO_3^-,\) \(TH,\) \(TSS,\) \(Cl^-,\) \(SO_{4}^{2-},\) \(Fe^{+2},\) \(F^-,\) \(Cu^{+2}.\)</p>
+            <h2>Suvning Sifat Indeksi(WQI)ni hisoblash</h2>
+            <p>Yer osti ichimlik suvining sifat indeksini hisoblaydigan ushbu kalkulyator quyidagi o'nta indikator bo'yicha hisoblaydi:  \(pH,\) \(OA (KMnO_4),\) \(NO_3^-,\) \(TH,\) \(TSS,\) \(Cl^-,\) \(SO_{4}^{2-},\) \(Fe^{2+},\) \(F^-,\) \(Cu^{2+}.\)</p>
             <br>
             <h3>Hisoblash jarayoni 4 bosqichdan iborat</h3>
 
             <ol>
-                <li>Har bir  \(i-\) parametr qiymati olinadi. Uni\(x_i\) bilan belgilaylik.</li>
-                <li>Sub-Index hisoblash. Har bir olingan \(x_i\) qiymat 0 va 1 oralig'idagi songa masshabi quyidagi formula yordamida olinadi:
+                <li>Har bir  \(i-\) parametr qiymati olinadi. Uni \(x_i\) bilan belgilaylik.</li>
+                <li>Sub-Index hisoblash. Har bir olingan \(x_i\) qiymat 0 va 1 oralig'idagi songa masshtabi quyidagi formula yordamida olinadi:
                     <p style="text-align: center;">\(SI_i=\min\left\{1,\left|\frac{x_i-x^{(st)}_i}{x^{(up)}_i-x^{(st)}_i}\right|\right\},\)</p>
                     <p>bu yerda  \(x^{(st)}_i\) parametr uchun suv eng yaxshi bo'lgandagi qiymat, \(x^{(up)}_i\) esa \(i-\) parametr uchun standartdagi yuqori chegara.</p>
                 </li>
