@@ -44,7 +44,7 @@ function result(x) {
   }
 
 document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
-    event.preventDefault();
+    //event.preventDefault();
     //Low Up parametrs
     const p_up=[9,5,45,10,1500,350,500,0.3,0.7,1]
     const p_mid=[7.5,0,0,7,875,0,0,0,0,0]
@@ -53,6 +53,13 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     let last = document.getElementById('last').value;
     let email = document.getElementById('email').value;
     let office = document.getElementById('office').value;
+
+    // Check if any required fields are empty
+    if (!first || !last || !email || !office) {
+       // alert("Please fill in all required fields as your name, email and office.");
+        return;
+    }
+    
     const ph = parseFloat(document.getElementById('ph').value) || 0;
     const oxidizing = parseFloat(document.getElementById('oxidizing').value) || 0;
     const no3 = parseFloat(document.getElementById('no3').value) || 0;
